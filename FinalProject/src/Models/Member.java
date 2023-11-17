@@ -1,5 +1,8 @@
 package Models;
-public class Member {
+import java.io.Serializable;
+
+public class Member implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int memberNumber;
     private String name;
 
@@ -68,9 +71,57 @@ public class Member {
             case 48: return new Member(48, "Elizabeth Martin");
             case 49: return new Member(49, "Charles Brown");
             case 50: return new Member(50, "William Brown");
+            case 51: return new Member(51, "Joseph Rodriguez");
+            case 52: return new Member(52, "Richard Davis");
+            case 53: return new Member(53, "James Martinez");
+            case 54: return new Member(54, "Jessica Wilson");
+            case 55: return new Member(55, "John Anderson");
+            case 56: return new Member(56, "Mary Anderson");
+            case 57: return new Member(57, "Richard Taylor");
+            case 58: return new Member(58, "William Jackson");
+            case 59: return new Member(59, "William Martinez");
+            case 60: return new Member(60, "Susan Moore");
+            case 61: return new Member(61, "Joseph Rodriguez");
+            case 62: return new Member(62, "Richard Davis");
+            case 63: return new Member(63, "James Martinez");
+            case 64: return new Member(64, "Jessica Wilson");
+            case 65: return new Member(65, "John Anderson");
+            case 66: return new Member(66, "Mary Anderson");
+            case 67: return new Member(67, "Richard Taylor");
+            case 68: return new Member(68, "William Jackson");
+            case 69: return new Member(69, "William Martinez");
+            case 70: return new Member(70, "Susan Moore");
+            case 71: return new Member(71, "Susan Thomas");
+            case 72: return new Member(72, "Sarah Wilson");
+            case 73: return new Member(73, "Elizabeth Thomas");
+            case 74: return new Member(74, "James Garcia");
+            case 75: return new Member(75, "Karen Martin");
+            case 76: return new Member(76, "Michael Davis");
+            case 77: return new Member(77, "Jessica Miller");
+            case 78: return new Member(78, "James Wilson");
+            case 79: return new Member(79, "Joseph Thomas");
+            case 80: return new Member(80, "Karen Jackson");
+            case 81: return new Member(81, "William Johnson");
+            case 82: return new Member(82, "Jennifer Moore");
+            case 83: return new Member(83, "Thomas Rodriguez");
+            case 84: return new Member(84, "Mary Wilson");
+            case 85: return new Member(85, "Mary Gonzalez");
+            case 86: return new Member(86, "Sarah Hernandez");
+            case 87: return new Member(87, "Mary Garcia");
+            case 88: return new Member(88, "Jennifer Jones");
+            case 89: return new Member(89, "Jennifer Thomas");
+            case 90: return new Member(90, "Robert Garcia");
+            case 91: return new Member(91, "Elizabeth Brown");
+            case 92: return new Member(92, "Linda Wilson");
+            case 93: return new Member(93, "James Martinez");
+            case 94: return new Member(94, "Jennifer Smith");
+            case 95: return new Member(95, "James Hernandez");
+            case 96: return new Member(96, "Susan Brown");
+            case 97: return new Member(97, "Charles Brown");
+            case 98: return new Member(98, "Robert Hernandez");
+            case 99: return new Member(99, "Richard Thomas");
+            case 100: return new Member(100, "Linda Williams");
             default: return null;
-
-
         }
     }
 }
