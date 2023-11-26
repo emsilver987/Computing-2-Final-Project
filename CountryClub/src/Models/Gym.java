@@ -1,41 +1,30 @@
 package Models;
 
-import java.util.Scanner;
-
 import BaseClasses.CapacityCheckinBase;
+import Interfaces.ICountryClubFacility;
 
-public class Gym extends CapacityCheckinBase {
+public class Gym extends CapacityCheckinBase implements ICountryClubFacility {
+    private final String welcomeMessage = "Welcome to Country Club gym facility!";
+    private final String hoursOfOperation = "Mon: 9:00AM - 11:00PM\nTues:9:00AM - 11:00PM\\nWend:9:00AM - 11:00PM\nThurs:9:00AM - 11:00PM\nFri:9:00AM - 11:00PM\nSat:11:00AM - 11:00PM\nSun:Closed";
 
-    private static final Scanner scanner = new Scanner(System.in);
-
-    public static void welcome(int number){
-        System.out.print("What would you like to do today?\n1 - See who's in this facility\n2 - Check hours\n3- Make an Appointment");
-        CapacityCheckinBase checkin = new CapacityCheckinBase(10);
-        checkin.Checkin(null);
-        int choice = scanner.nextInt();
-        if (choice ==1){
-            listMembers();
-        }
-        else if (choice == 2){
-            hours();
-        }
-        else if (choice == 3){
-            checkin.Checkin(null);
-        }
-        else {
-            welcome(number);
-        }
-
-    }
-    public static void listMembers(){
-
-    }
-    public static void hours(){
-        
-    }
     public Gym(int capacity)
     {
         super(capacity);
+    }
+
+    @Override
+    public String WelcomeMessage() {
+        return welcomeMessage;
+    }
+
+    @Override
+    public String ListCheckedInMembers() {
+        return super.ListCheckedInMembers();
+    }
+
+    @Override
+    public String WorkHours() {
+        return hoursOfOperation;
     }
 
 }
