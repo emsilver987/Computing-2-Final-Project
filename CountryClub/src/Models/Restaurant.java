@@ -1,10 +1,12 @@
 package Models;
 
+import java.util.Date;
 import java.util.Scanner;
 
 import BaseClasses.CapacityCheckinBase;
+import Interfaces.IReservation;
 
-public class Restaurant extends CapacityCheckinBase {
+public class Restaurant extends CapacityCheckinBase implements IReservation {
 
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -36,6 +38,11 @@ public class Restaurant extends CapacityCheckinBase {
     public Restaurant(int capacity)
     {
         super(capacity);
+    }
+    @Override
+    public void MakeReservation(Date dateOfReservation, Member member, int partyNum) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'MakeReservation'");
     }
 
 }

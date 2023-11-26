@@ -14,11 +14,15 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class CountryClub implements Serializable {
-    private Gym gym;
-    private Pool pool;
-    private Restaurant restaurant;
+    public Gym gym;
+    public Pool pool;
+    public Restaurant restaurant;
     public List<Member> Members = new ArrayList<Member>();
-
+    public CountryClub(){
+        Gym gym = new Gym(10);
+        Pool pool = new Pool(20);
+        Restaurant restaurant = new Restaurant(30);
+    }
     public void Serialize() throws FileNotFoundException, IOException {
         ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("CountryClubState"));
         out.writeObject(this);

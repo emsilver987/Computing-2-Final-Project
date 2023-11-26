@@ -11,8 +11,10 @@ import Models.Member;
 public class App {
     private static final Scanner scanner = new Scanner(System.in);
     private static final List<Member> list = new ArrayList<>();
+    private static CountryClub theCountryClub;
 
     public static void main(String[] args) throws Exception {
+        theCountryClub = new CountryClub();
         initializeMembers();
         Member member = obtainMemberDetails();
         if (member != null) {
@@ -125,12 +127,13 @@ public class App {
             new Member(99, "Richard Thomas"),
             new Member(100, "Linda Williams")
         ));
+        theCountryClub.Members = list;
     }
 
     public static Member obtainMemberDetails() {
         System.out.print("Welcome to Silverthorne Country Club\nIt's great to see you\nPlease enter your Member Number: ");
         int memberNumber = scanner.nextInt();
-        return list.stream().filter(m -> m.getNumber() == memberNumber).findFirst().orElse(null);
+        return theCountryClub.Members.stream().filter(m -> m.getNumber() == memberNumber).findFirst().orElse(null);
     }
 
     public static void FacilityChoice(Member member) {
@@ -141,13 +144,16 @@ public class App {
             System.out.println("Hello " + member.getName() + " (Member " + member.getNumber() + "), Welcome to the " + userResponse);
             switch (userResponse) {
                 case Gym:
-                    Gym.welcome(member.getNumber());
+                    theCountryClub.gym.Checkin(member);
                     break;
                 case Pool:
-                    Pool.welcome(member.getNumber());
+                    theCountryClub.pool.Checkin(member);
                     break;
-                case Restaurant:
-                    Restaurant.welcome(member.getNumber());
+                case RestaurantCheckin:
+                    theCountryClub.restaurant.Checkin(member);
+                    break;
+                case RestaurantReservation:
+                    theCountryClub.restaurant.MakeReservation(null, member, 2);
                     break;
             }
         } else {
@@ -158,7 +164,8 @@ public class App {
     public enum Response {
         Gym(1),
         Pool(2),
-        Restaurant(3);
+        RestaurantCheckin(3),
+        RestaurantReservation(4);
 
         private final int value;
 
