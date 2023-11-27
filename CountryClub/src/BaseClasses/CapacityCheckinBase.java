@@ -22,4 +22,12 @@ public class CapacityCheckinBase implements ICheckin {
         currentCapacity++;
     }
 
+    protected String ListCheckedInMembers() {
+        String result = "";
+        for (Member member : checkedInMembers) {
+            result+=member.getName() + "\n";
+        }
+        return result;
+    }
+
 }
